@@ -14,7 +14,85 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="home.css">
+    <style>
+        body{
+    background-image: url('background.jpeg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    }
+    button {
+    height: 51px;
+    width: 51px;
+    border: 2px solid cyan;
+    background-color: black;
+    color: cyan;
+    }
+    ::placeholder{
+    color: cyan;
+    }
+    input[type="text"] {
+    width: 80%;
+    height: 50px;
+    font-size: 15px;
+    border-radius: 0 0 0 0;
+    background-color: black;
+    color: cyan;
+    outline: none;
+    }
+    .col-lg-4{
+    padding: 0px;
+    }
+    .col-lg-2{
+    padding: 0px;
+    }
+    .col-lg-8{
+    padding: 0px;
+    }
+    .col-sm-12{
+    padding: 0px;
+    }
+    .col-xs-12{
+    padding: 0px;
+    }
+    .row{
+    margin: 0px;
+    }
+    *
+    box-sizing border-box
+    
+    .container{
+    width:360px;
+    margin:0 auto;
+    border:solid 1px #ccc;
+    border-radius: 5px;
+    overflow:hidden;
+    }
+    
+    .chat-container
+    {
+    overflow:auto;
+    transform:rotate(180deg);
+    direction:rtl;
+    }
+    .chat-container p
+    {
+    color: white;
+    background-color: rgba(0,0,0,0.5);
+    height: auto;
+    width: 100%;
+    text-align: justify;
+    border-radius: 10px;
+    font-weight: bold;
+    }
+    .message
+    {
+        transform:rotate(180deg);
+        direction:ltr;
+    }
+    
+    
+    
+    </style>
 </head>
 
 <body style="background-color: black;">
@@ -29,49 +107,42 @@
                     </div>
                     <div class="col-lg-8 col-sm-12 col-xs-12" align="center">
                         <div style="margin-top: 10px;">
-                            <button
-                                style="height: 50px;border-radius: 10px 0 0 10px;background-color: black;border: 1px solid cyan;font-size: 15px;padding: 13px;padding-left: 20px;"><i
-                                    class="fa fa-search" aria-hidden="true"
-                                    style="font-size: 17px;color:rgb(0, 217, 255);"></i></button><span><input
-                                    type="text" id="search-input" placeholder="Search Here"
-                                    style="border-radius: 0 10px 10px 0;padding: 13px;border: 1px solid cyan;"></span>
+                            <h2 id="err"></h2>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="row" style="padding-bottom: 60px;">
-        <div class="col-lg-2 col-sm-12 col-xs-12" align="center">
-            <h4 style="margin-top: 100px;color: rgb(137, 207, 240);font-weight: bold;">Instructions to use</h4><br>
-            <div style="text-align: left;padding-left: 30px;padding-right: 20px;margin-top: 10px;">
-                <h6 style="color: black;font-size: 18px;">
-                    Please use the following keywords whike using our Voice command based Web Application:
-                    click: To click on any </h6><br>
+        <div class="row" style="padding-bottom: 60px;">
+            <div class="col-lg-2 col-sm-12 col-xs-12" align="center">
+                <h4 style="margin-top: 100px;color: rgb(137, 207, 240);font-weight: bold;">Instructions to use</h4><br>
+                <div style="text-align: left;padding-left: 30px;padding-right: 20px;margin-top: 10px;">
+                    <h6 style="color: black;font-size: 18px;">
+                        Please use the following keywords whike using our Voice command based Web Application:
+                        click: To click on any </h6><br>
+                </div>
             </div>
-        </div>
-        <div class="col-lg-8 col-sm-12 col-xs-12">
-            <iframe id="searchbox" src="lol.html" title="W3Schools Free Online Web Tutorials"
-                style="height: 480px;width: 92%;border: 5px solid rgb(137, 207, 240);border-radius: 10px;margin-left: 4%;margin-right: 4%;"></iframe>
-            <h1></h1>
-        </div>
-        <div class="col-lg-2 col-sm-12 col-xs-12" style="margin-bottom: 100px;">
-            <h4 style="margin-top: 100px;color: rgb(137, 207, 240);font-weight: bold;" align="center">Searching for</h4>
-            <br>
-            <div class="container">
-                <div class="chat-container">
-                    <div class="message">
-                        <p id="mes" style="padding-left: 10px;"></p>
+            <div class="col-lg-8 col-sm-12 col-xs-12">
+                <div id="searchbo">
+                    <iframe id="searchbox" src="local.html" title="W3Schools Free Online Web Tutorials"
+                        style="height: 480px;width: 92%;border: 5px solid rgb(137, 207, 240);border-radius: 10px;margin-left: 4%;margin-right: 4%;"></iframe>
+                </div>
+                <h1></h1>
+            </div>
+            <div class="col-lg-2 col-sm-12 col-xs-12" style="margin-bottom: 100px;">
+                <h4 style="margin-top: 100px;color: rgb(137, 207, 240);font-weight: bold;" align="center">Searching for
+                </h4>
+                <br>
+                <div class="container">
+                    <div class="chat-container">
+                        <div class="message">
+                            <p id="mes" style="padding-left: 10px;"></p>
+                        </div>
                     </div>
                 </div>
             </div>
-
-
-
         </div>
-    </div>
-    <script src="voice.js"></script>
-    <!-- <script>
+        <!-- <script>
         var synth = window.speechSynthesis;
         
             let arr=["Welcome to Dhwani","You may speak now!!!"]
@@ -82,115 +153,141 @@
             }
         
     </script> -->
-    <script>
-        const searchInput = document.querySelector(".message");
-        searchInput.addEventListener("keydown", function (event) {
-            if (event.code == "enter") {
-                searchtyping();
+        <script>
+            const searchInput = document.querySelector(".message");
+            searchInput.addEventListener("keydown", function (event) {
+                if (event.code == "enter") {
+                    searchtyping();
+                }
+            });
+            let link;
+            function searchtyping() {
+                let input = searchInput.value;
+                if (input.substring(0, 4) == 'www.' && input.substring(input.length - 4, input.length) == ".com") {
+                    document.getElementById("searchbox").src = "https://" + input;
+                }
+                else {
+                    document.getElementById("searchbox").src = "https://www.google.com/search?q=" + input + "&rlz=1C5CHFA_enNZ948NZ948&oq=" + input + "&aqs=chrome.0.69i59l2j46i175i199i433j46i199i291i433j46j0i433j0j69i60.875j0j9&sourceid=chrome&ie=UTF-8";
+                }
             }
-        });
-        let link;
-        function searchtyping() {
-            let input = searchInput.value;
-            if (input.substring(0, 4) == 'www.' && input.substring(input.length - 4, input.length) == ".com") {
-                document.getElementById("searchbox").src = "https://" + input;
-            }
-            else {
-                document.getElementById("searchbox").src = "https://www.google.com/search?q=" + input + "&rlz=1C5CHFA_enNZ948NZ948&oq=" + input + "&aqs=chrome.0.69i59l2j46i175i199i433j46i199i291i433j46j0i433j0j69i60.875j0j9&sourceid=chrome&ie=UTF-8";
-            }
-        }
-    </script>
-    <script>
-        let synth = window.speechSynthesis;
-        const texts = document.querySelector('.message');
+        </script>
+        <script>
+            var storage = new Array();
+            let counter = 0;
+            let deleted = 0;
+            let synth = window.speechSynthesis;
+            const texts = document.querySelector('.message');
 
-        window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+            window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
-        const recognition = new SpeechRecognition();
-        recognition.interimResults = true;
+            const recognition = new SpeechRecognition();
+            recognition.interimResults = true;
 
-        let pl = document.getElementById("mes");
-        recognition.addEventListener('result', (e) => {
-            texts.appendChild(pl);
-            const text = Array.from(e.results)
-                .map(result => result[0])
-                .map(result => result.transcript)
-                .join('');
+            let pl = document.getElementById("mes");
+            recognition.addEventListener('result', (e) => {
+                texts.appendChild(pl);
+                const text = Array.from(e.results)
+                    .map(result => result[0])
+                    .map(result => result.transcript)
+                    .join('');
 
-            pl.innerText = text;
-            let storage=[];
-            let counter=0;
-            if (e.results[0].isFinal) {
-                if (text.includes("click") == false) {
-                    if (text.substring(0, 4) == 'www.' && text.substring(text.length - 4, text.length) == ".com") {
-                        document.getElementById("searchbox").src = "https://" + text;
-                        storage[counter++]="https://" + text;
-                        console.log(storage[counter-1]);
-                        p1.innerText = "Recognising" + text;
-                    }
-                    else if (text == "open geeksforgeeks" || text == "open Geeks for Geeks" || text == "Geeksforgeeks") {
-                        document.getElementById("searchbox").src = "https://www.geeksforgeeks.org/";
-                        var utterThis = new SpeechSynthesisUtterance(text);
-                        synth.speak(utterThis);
-                    }
-                    else if (text == "open YouTube") {
-                        document.getElementById("searchbox").src = "https://www.youtube.com/";
-                        if (text == "click history") {
-                            document.getElementById("searchbox").src = "https://www.youtube.com/feed/history";
+                pl.innerText = text;
+                if (e.results[0].isFinal) {
+                    if (text.includes("click") == false && text.includes("back") == false) {
+                        if (text.substring(0, 4) == 'www.' && text.substring(text.length - 4, text.length) == ".com") {
+                            document.getElementById("searchbox").src = "https://" + text;
+                            storage[counter] = "https://" + text;
+                            counter = counter + 1;
                         }
-                        else if (text == "click library") {
-                            document.getElementById("searchbox").src = "https://www.youtube.com/feed/library";
+                        else if (text == "open geeksforgeeks" || text == "open Geeks for Geeks" || text == "Geeksforgeeks") {
+                            document.getElementById("searchbox").src = "https://www.geeksforgeeks.org/";
+                            var utterThis = new SpeechSynthesisUtterance(text);
+                            synth.speak(utterThis);
+                            storage[counter] = "https://www.geeksforgeeks.org/";
+                            counter = counter + 1;
                         }
-                        else if (text == "click explore") {
-                            document.getElementById("searchbox").src = "https://www.youtube.com/feed/explore";
+                        else if (text == "open YouTube") {
+                            document.getElementById("searchbox").src = "https://www.youtube.com/";
+                            var utterThis = new SpeechSynthesisUtterance(text);
+                            synth.speak(utterThis);
+                            storage[counter] = "https://www.youtube.com/";
+                            counter = counter + 1;
+                        }
+                        else if (text == "leetcode" || text == "leet code" || text == "Geeksforgeeks") {
+                            document.getElementById("searchbox").src = "https://leetcode.com/";
+                            var utterThis = new SpeechSynthesisUtterance(text);
+                            synth.speak(utterThis);
+                            storage[counter] = "https://leetcode.com/";
+                            counter = counter + 1;
                         }
                         else {
-                            document.getElementById("searchbox").src = "";
+                            document.getElementById("searchbox").src = "https://www.google.com/search?q=" + text + "&rlz=1C5CHFA_enNZ948NZ948&oq=" + text + "&aqs=chrome.0.69i59l2j46i175i199i433j46i199i291i433j46j0i433j0j69i60.875j0j9&sourceid=chrome&ie=UTF-8";
+                            var utterThis = new SpeechSynthesisUtterance(text);
+                            synth.speak(utterThis);
+                            storage[counter] = "https://www.google.com/search?q=" + text + "&rlz=1C5CHFA_enNZ948NZ948&oq=" + text + "&aqs=chrome.0.69i59l2j46i175i199i433j46i199i291i433j46j0i433j0j69i60.875j0j9&sourceid=chrome&ie=UTF-8";
+                            counter = counter + 1;
                         }
-                        var utterThis = new SpeechSynthesisUtterance(text);
-                        synth.speak(utterThis);
                     }
-                    else if (text == "leetcode" || text == "leet code" || text == "Geeksforgeeks") {
-                        document.getElementById("searchbox").src = "https://leetcode.com/";
-                        var utterThis = new SpeechSynthesisUtterance(text);
-                        synth.speak(utterThis);
+                    else if (text.includes("click") == true && text.includes("back") == false) {
+                        if (storage[counter - 1].includes("youtube") == true) {
+                            if (text == "click history") {
+                                document.getElementById("searchbox").src = "https://www.youtube.com/feed/history";
+                                document.getElementById("err").innerText = "";
+                                storage[counter] = "https://www.youtube.com/feed/history";
+                                counter = counter + 1;
+                                var utterThis = new SpeechSynthesisUtterance(text);
+                                synth.speak(utterThis);
+                            }
+                            else if (text == "click library") {
+                                document.getElementById("searchbox").src = "https://www.youtube.com/feed/library";
+                                document.getElementById("err").innerText = "";
+                                storage[counter] = "https://www.youtube.com/feed/library";
+                                counter = counter + 1;
+                                var utterThis = new SpeechSynthesisUtterance(text);
+                                synth.speak(utterThis);
+                            }
+                            else if (text == "click explore") {
+                                document.getElementById("searchbox").src = "https://www.youtube.com/feed/explore";
+                                document.getElementById("err").innerText = "";
+                                storage[counter] = "https://www.youtube.com/feed/explore";
+                                counter = counter + 1;
+                                var utterThis = new SpeechSynthesisUtterance(text);
+                                synth.speak(utterThis);
+                            }
+                            else {
+                                let declare = "Sorry we cannot let you go to that link!!!Try again with another link...";
+                                document.getElementById("searchbox").src = "https://www.youtube.com/";
+                                var utterThis = new SpeechSynthesisUtterance(declare);
+                                synth.speak(utterThis);
+                                document.getElementById("err").innerText = "Sorry we cannot let you go to that link!!!Try again with another link...";
+                                var utterThis = new SpeechSynthesisUtterance(text);
+                                synth.speak(utterThis);
+                            }
+                        }
                     }
-                    else {
-                        document.getElementById("searchbox").src = "https://www.google.com/search?q=" + text + "&rlz=1C5CHFA_enNZ948NZ948&oq=" + text + "&aqs=chrome.0.69i59l2j46i175i199i433j46i199i291i433j46j0i433j0j69i60.875j0j9&sourceid=chrome&ie=UTF-8";
-                        var utterThis = new SpeechSynthesisUtterance(text);
-                        synth.speak(utterThis);
+                    else if (text.includes("click") == false && text.includes("back") == true) {
+                        if (counter==1) {
+                            document.getElementById("searchbox").src = "local.html";
+                            counter = 1;
+                        }
+                        else {
+                            storage.length = storage.length - 1;
+                            counter = counter - 1;
+                            document.getElementById("searchbox").src = storage[counter - 1];
+                        }
+
                     }
+
                 }
-                else{
-                    console.log(storage[counter-1]);
-                    if(storage.includes("youtube") == false)
-                    {
-                        if(text=="click history")
-                        {
-                            document.getElementById("searchbox").src = "https://www.youtube.com/feed/history";
-                            
-                        }
-                        else if(text=="click library")
-                        {
-                            document.getElementById("searchbox").src = "https://www.youtube.com/feed/library";
-                        }
-                        else if (text == "click explore") 
-                        {
-                            document.getElementById("searchbox").src = "https://www.youtube.com/feed/explore";
-                        }
-                    }
-                }
-
-            }
-        });
+            });
 
 
-        recognition.addEventListener('end', () => {
+            recognition.addEventListener('end', () => {
+                recognition.start();
+            })
+
             recognition.start();
-        })
-
-        recognition.start();
-    </script>
+        </script>
 
 </body>
 
